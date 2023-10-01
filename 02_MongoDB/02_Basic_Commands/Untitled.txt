@@ -1,0 +1,207 @@
+#to start MongoDB
+
+-> mongosh
+
+
+
+
+
+#show all database
+
+->show dbs
+
+
+
+
+
+
+
+# To work on a particular database
+
+-> use shopdb
+
+
+
+
+
+
+# to check on which database I am currently working on
+
+-> db
+
+
+
+
+
+
+
+
+
+#insert Data in database 
+
+-> db.collection_name.insertOne( { _id: 1 , element : data  } )
+
+Example: 
+
+-> db.products.insertOne( { _id:1 , name:"Anshu",price:1.20  } )
+
+
+
+
+
+
+# To show all the collection_name in the database
+
+-> show collections
+
+
+
+
+
+
+
+
+# To select a particular data from the collections 
+
+-> db.products.find({ element : data })
+
+Example: 
+
+-> db.products.find({ name: "Anu" })
+
+
+
+
+# To show particular data from particular collections 
+
+
+->  db.collection_name.find( {conditon}, {data_to_be_shown} ) 
+
+for data in data_to_be_shown -> name :1 to show it 
+
+for data in data_to_be_shown -> name:0 not to 
+show it 
+
+Example: 
+
+->  db.products.find( {_id:1}, {name:1 , price:1 ,_id:0} )   
+
+
+here name and price are shown because they are 1 , where as id is not shown because it is 0 
+
+
+
+
+
+
+# To show all the data in a collection in MongoDB,
+  you can use the find() method without any filter or query criteria.
+
+-> db.collectionName.find()
+
+Example :-
+
+-> db.products.find()
+
+
+
+
+
+# To add a update / new data to our present collection
+
+
+-> db.collection_name.updateOne( {_id: 1} , {$set : {data_to_be_added / or updated}})      
+
+Example:- 
+
+new data
+---------
+
+-> db.products.updateOne( {_id: 1} , {$set : {price:10}})   
+
+update data
+-----------
+
+-> db.products.updateOne( {_id: 1} , {$set : {stock:32}})
+
+
+
+
+
+
+
+# To delete any elements from database
+
+-> db.collection_name.deleteOne( {_id: 1})
+
+Example
+
+->db.products.deleteOne({id:2})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+db.products.insertOne ( 
+    { 
+        _id: 3,
+       
+        price: 0.80,
+        stock: 12,
+        review: [
+            {
+                authorName: "James",
+                rating: 5,
+                review: "Fantastic"
+            },
+
+            {
+                authorName: "Jono",
+                rating: 5,
+                review: "The best pencil I've used in my life."
+            }
+
+        ]
+
+    }
+)
+
+
+
+
+
+{
+    _id: 1,
+    name: "Pen",
+    price: 1.20,
+    stock: 32
+}
+
+{
+    _id: 2,
+    name: "Pencil",
+    price: 0.80,
+    stock: 12
+}
+
+{
+    orderNumber: 3243,
+    productsOrdered:[1,2]
+}

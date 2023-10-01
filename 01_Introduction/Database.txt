@@ -1,0 +1,9 @@
+So Actually there are different types of databases 
+
+SQL and Non SQL databases
+
+SQL data are shown in table -> good as relational database
+
+Where as non SQL data is shown in JSON format more flexible than SQL -> it's non relational
+
+For practice sql go to -> https://sqliteonline.com/
